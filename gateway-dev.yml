@@ -6,11 +6,11 @@ spring:
     gateway:
       routes:
         - id: catalogRoute
-          uri: lb://CATALOG
+          uri: lb://CATALOG-SERVICE
           predicates:
            - Path=/catalog/**
         - id: movieRoute
-          uri: lb://MOVIE
+          uri: lb://MOVIE-SERVICE
           predicates:
            - Path=/movie/**
           filters:
