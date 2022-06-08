@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:  
+  cloud:
+    gateway:
+      routes:
+        - id: catalogRoute
+          uri: lb://CATALOG
+          predicates:
+           - Path=/catalog/**
+        - id: movieRoute
+          uri: lb://MOVIE
+          predicates:
+           - Path=/movie/**
+          filters:
+            - AddRequestHeader=user-request-header, custom-user-request-header
+            - AddResponseHeader=user-respons-header, custom-user-response-header 
