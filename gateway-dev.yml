@@ -13,6 +13,3 @@ spring:
           uri: lb://MOVIE-SERVICE
           predicates:
            - Path=/movie/**
-          filters:
-            - AddRequestHeader=user-request-header, custom-user-request-header
-            - AddResponseHeader=user-respons-header, custom-user-response-header 
